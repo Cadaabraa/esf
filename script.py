@@ -23,7 +23,7 @@ def process_csv():
                 except StopIteration:
                     break
                 new_row = row1.copy() # copy the first row to preserve original data
-                for k in range(3): # for each column in a row
+                for k in range(2): # for each column in a row
                     col_k_row1 = row1[k]
                     col_k_row2 = row2[k]
                     col_k_row3 = row3[k]
@@ -50,7 +50,7 @@ def process_csv():
                         row2[k] = str(row2[k]) + 'u'
                         row3[k] = str(row3[k]) + 'u'
                     # Add 'u' to the values in row 1 that are used to calculate the mean
-                    if k < len(new_row) - 3:
+                    if k < len(new_row) - 2: # change here
                         new_row[k] = str(new_row[k]) + 'u'
                 rows.append(new_row)
                 rows.append([str(x) for x in row2])
